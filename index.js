@@ -180,4 +180,3 @@ equal.addEventListener("click", () => {
   calculate();
 });
 
-console.log(document.querySelector("#calc-main"));
