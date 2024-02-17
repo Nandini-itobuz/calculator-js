@@ -37,6 +37,7 @@ for (let button of controlButtons) {
 
     if (btnValue === 'C') {
       let clearedValue= display.innerText.split("").slice(0, -1).join("");
+      backspaceFunc();
       return display.innerText = clearedValue;
     }
 
@@ -51,4 +52,14 @@ for (let button of controlButtons) {
     else if (symbol) secondValue += btnValue
     if (btnValue !== '=') display.innerText += btnValue
   })
+}
+
+function backspaceFunc(){
+  if(secondValue){
+    secondValue= parseInt(secondValue/10);
+  }
+
+  if(firstValue){
+    firstValue= parseInt(firstValue/10);
+  }
 }
