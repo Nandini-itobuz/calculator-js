@@ -1,6 +1,6 @@
 const display = document.querySelector('.display')
 const controlButtons = document.querySelector('.controls').children
-const allSymbols = ['+', '-', 'x', '/', '%', 'C', '=', '^', 'AC', 'C']
+const allSymbols = ['+', '-', 'x', '/', '%', 'C', '=', '^', 'AC']
 
 let firstValue = ''
 let secondValue = ''
@@ -15,7 +15,7 @@ const calculate = () => {
   if (symbol === '-') result = firstValue - secondValue
   if (symbol === 'x') result = firstValue * secondValue
   if (symbol === '/') result = firstValue / secondValue
-  if (symbol === '%') result = firstValue % secondValue
+  if (symbol === '%') result = (firstValue/100) * secondValue
   if (symbol === '^') result = Math.pow(firstValue, secondValue);
 
   display.innerText = result
@@ -35,10 +35,17 @@ for (let button of controlButtons) {
       return display.innerText = ''
     }
 
-    if (btnValue === 'C') {
-      let clearedValue= display.innerText.split("").slice(0, -1).join("");
-      backspaceFunc();
-      return display.innerText = clearedValue;
+    if (btnValue === 'C' && !firstValue && !secondValue) return null;
+
+    else if (btnValue === 'C' && firstValue && !secondValue) {
+      firstValue = parseInt(firstValue/10);
+      return display.innerText = firstValue;
+    }
+
+    else if (btnValue === 'C' && firstValue && symbol && secondValue) {
+      secondValue = parseInt(secondValue/10);
+      let stringValure = display.innerText.split("").slice(0, -1).join("");
+      return display.innerText = stringValure
     }
 
     if (firstValue && btnValueIsSymbol) {
@@ -54,12 +61,4 @@ for (let button of controlButtons) {
   })
 }
 
-function backspaceFunc(){
-  if(secondValue){
-    secondValue= parseInt(secondValue/10);
-  }
 
-  if(firstValue){
-    firstValue= parseInt(firstValue/10);
-  }
-}
