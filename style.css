@@ -1,57 +1,42 @@
-#calc-main {
-  background-color: #203155;
-  margin: 80px auto;
-  width: 50%;
-  height: 600px;
-  padding: 2%;
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.calculator {
+  background: #101010;
+  width: 25rem;
+  margin: 5em auto;
+}
+
+.display {
+  background-color: #222222;
+  color: #ffffff;
+  text-align: right;
+  font-size: 1.7em;
+  height: 6em;
+  line-height: 8em;
+  padding: 0 1.5em;
+  font-family: sans-serif;
+}
+
+.controls {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: repeat(6, 1fr);
-  gap: 1%;
-  border-radius: 2%;
-  text-align: center;
+  padding: 1em 0;
+  margin: 0 0.4em;
 }
-#calc-main input {
-  grid-column: 1/5;
-  background-color: #203155;
-  border: 1px solid white;
-  color: white;
-  font-size: 2rem;
-  direction: rtl;
+.controls button {
+  background-color: #222222;
+  color: #fff;
+  height: 3em;
+  cursor: pointer;
+  margin: 0.5em;
+  border: 0;
+  border-radius: 50%;
+  text-align: sans-serif;
+  font-size: 1.5rem;
 }
-#calc-main input:focus {
-  outline: none;
-}
-#calc-main #ac {
-  grid-column: 1/3;
-  background-color: rgb(24, 125, 155);
-  color: white;
-  font-size: 2rem;
-  border: 1px solid rgb(24, 125, 155);
-}
-#calc-main #c {
-  grid-column: 3/5;
-  background-color: rgb(24, 125, 155);
-  color: white;
-  font-size: 2rem;
-  border: 1px solid white;
-}
-#calc-main #seven, #calc-main #eight, #calc-main #nine, #calc-main #four, #calc-main #five, #calc-main #six, #calc-main #one, #calc-main #two, #calc-main #three, #calc-main #zero {
-  background-color: #203155;
-  color: white;
-  font-size: 2rem;
-  border: 1px solid white;
-}
-#calc-main #add, #calc-main #minus, #calc-main #multiply, #calc-main #division, #calc-main #dot {
-  background-color: rgb(24, 125, 155);
-  color: white;
-  font-size: 2rem;
-  border: 1px solid white;
-}
-#calc-main #equal {
-  background-color: #DF8422;
-  color: white;
-  font-size: 2rem;
-  border: 1px solid white;
-  border-radius: 5%;
+.controls .teal {
+  background-color: teal;
 }/*# sourceMappingURL=style.css.map */
